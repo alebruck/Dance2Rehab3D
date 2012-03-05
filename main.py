@@ -19,25 +19,15 @@ from direct.task import Task
 
 #import world, characters
 
-# Function to put instructions on the screen.
-def addInstructions(pos, msg):
-    return OnscreenText(text=msg, style=1, fg=(1,1,1,1),
-                        pos=(-1.3, pos), align=TextNode.ALeft, scale = .05)
-
-# Function to put title on the screen.
-def addTitle(text):
-    return OnscreenText(text=text, style=1, fg=(1,1,1,1),
-                        pos=(1.3,-0.95), align=TextNode.ARight, scale = .07)
-
-
 class Main(DirectObject):
+	side = True
+	score = 0
 
 	def __init__(self):
 		print "game init"
-
 		# Start With de Game
-		#self.config()
-		#taskMgr.add(self.timerTask, 'timerTask')
+		self.config()
+		taskMgr.add(self.timerTask, 'timerTask')
 
 	# define some game configuration
 	def config(self):
@@ -45,21 +35,27 @@ class Main(DirectObject):
 		self.accept("escape",sys.exit)
 		# define game clock label
 		self.mytimer = DirectLabel(scale=.05,pos=(0,0,0))
+
+		# 30 seconds
+		taskMgr.doMethodLater(30, self.changeSide, 'changeSide')
 		# 60 seconds
-		taskMgr.doMethodLater(60, chageSide, 'Change Side')
+		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
+		# 90 seconds
+		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
 		# 120 seconds
-		taskMgr.doMethodLater(120, changeSide, 'ChangeSide')
+		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
 
 	# control the time in game
 	def timerTask(self,task): 
 		self.secondsTime = int(task.time) 
 	  	self.minutesTime = int(self.secondsTime/60)
 	  	self.mytimer['text'] = "%02d:%02d" % (self.minutesTime%60, self.secondsTime%60)
+	  	print self.side
 	  	return Task.cont
 
+	# change current game side
 	def changeSide(self, task):
-		side = not side
-
+		self.side = not self.side
 
 
 
