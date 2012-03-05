@@ -42,9 +42,9 @@ class Main(DirectObject):
 		# 60 seconds
 		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
 		# 90 seconds
-		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
+		taskMgr.doMethodLater(90, self.changeSide, 'changeSide')
 		# 120 seconds
-		taskMgr.doMethodLater(60, self.changeSide, 'changeSide')
+		taskMgr.doMethodLater(120, self.changeSide, 'changeSide')
 
 	# control the time in game
 	def timerTask(self,task): 
