@@ -25,7 +25,7 @@ class Main(DirectObject):
 
 	def __init__(self):
 		print "game init"
-		# Start With de Game
+		# start Game
 		self.config()
 		taskMgr.add(self.timerTask, 'timerTask')
 
