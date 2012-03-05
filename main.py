@@ -35,6 +35,7 @@ class Main(DirectObject):
 		self.accept("escape",sys.exit)
 		# define game clock label
 		self.mytimer = DirectLabel(scale=.05,pos=(0,0,0))
+		self.score = DirectLabel(scale=.05,pos=(0,5,0))
 
 		# 30 seconds
 		taskMgr.doMethodLater(30, self.changeSide, 'changeSide')
