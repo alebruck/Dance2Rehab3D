@@ -1,7 +1,7 @@
 <CoordinateSystem> { Y-Up }
 
 <Comment> {
-  "maya2egg2009 -a chan -o 'C:\PANDAI\assets\models\worm_anim.egg' 'C:\PANDAI\assets\models\worm.mb'"
+  "maya2egg2009 -a chan -o 'worm_anim.egg' 'worm.mb'"
 }
 <Table> {
   <Bundle> worm {

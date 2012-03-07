@@ -13,6 +13,9 @@ from direct.actor.Actor import Actor
 from direct.showbase.DirectObject import DirectObject
 import random, sys, os, math
 
+
+from pandac.PandaModules import ColorBlendAttrib
+
 import direct.directbase.DirectStart 
 from direct.gui.DirectGui import * 
 from direct.task import Task 
@@ -22,14 +25,14 @@ import world
 
 class Main(DirectObject):
 	side = True
-
+	worm = None
 	def __init__(self):
 		print "game init"
 		# start Game
 		self.config()
 		taskMgr.add(self.timerTask, 'timerTask')
 		self.setCamera()
-		a = world.World()
+		a = world.World(self)
 
 	# define some game configuration
 	def config(self):
@@ -38,6 +41,8 @@ class Main(DirectObject):
 		# define game clock label
 		self.mytimer = DirectLabel(scale=.05,pos=(-0.95,0,0.9))
 		self.score = DirectLabel(scale=.05,pos=(0.95,0,0.9))
+
+		
 
 		self.score['text'] = str(0)
 
@@ -65,6 +70,8 @@ class Main(DirectObject):
 	def setCamera(self):
 		base.cam.setHpr(0,-15,0)
 		base.cam.setPos(0, 0, 200)
+		
+
 
 
 

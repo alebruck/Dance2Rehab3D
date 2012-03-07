@@ -4,7 +4,7 @@
   "maya2egg2009 -a model -o 'C:\PANDAI\assets\models\clownfish.egg' 'C:\PANDAI\assets\models\clownfish.mb'"
 }
 <Texture> lambert3SG {
-  "../Texture/clownfish_t.png"
+  "clownfish_t.png"
   <Scalar> wrapu { repeat }
   <Scalar> wrapv { repeat }
   <Scalar> minfilter { linear_mipmap_linear }
