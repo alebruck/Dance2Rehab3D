@@ -29,7 +29,19 @@ class Character():
 		print "random object created"
 
 
+	def createWorm(self):
+		self.worm = Actor("model/worm",{"dance":"model/worm_anim"})
+		self.worm.reparentTo(render)
+		self.worm.setPos(-200,-900,20)
+		self.worm.setHpr(0,0,0)
+		self.worm.setScale(2, 2, 2)
+		self.worm.loop("dance")
+		cm = CardMaker("sombraWorm")
+		cm.setFrame(-5, 5, -5, 5)
+		return self.worm
 
+
+'''
 self.fish = Actor("model/clownfish",{"swim":"model/clownfish_swim"})
 		self.fish .reparentTo(render)
 		self.fish.setPos(0,-900,200)
@@ -48,6 +60,6 @@ self.fish = Actor("model/clownfish",{"swim":"model/clownfish_swim"})
 		self.sombraFish.setP(270)
 		self.sombraFish.setPos(0,0,1)
 		self.sombraFish.setTransparency(TransparencyAttrib.MAlpha)
-		tex = loader.loadTexture("image/sombra.png")
+		tex = loader.loadTexture("misc/images/sombra.png")
 		self.sombraFish.setTexture(tex)
-		return self.fish
+		return self.fish'''

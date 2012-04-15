@@ -1,10 +1,10 @@
 <CoordinateSystem> { Y-Up }
 
 <Comment> {
-  "maya2egg2009 -a model -o 'C:\PANDAI\assets\models\worm.egg' 'C:\PANDAI\assets\models\worm.mb'"
+  "maya2egg2009 -a model -o 'worm.egg' 'worm.mb'"
 }
 <Texture> lambert2SG {
-  "../Texture/worm_t.png"
+  "worm_t.png"
   <Scalar> wrapu { repeat }
   <Scalar> wrapv { repeat }
   <Scalar> minfilter { linear_mipmap_linear }
